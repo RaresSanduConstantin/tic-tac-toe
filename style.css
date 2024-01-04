@@ -1,0 +1,108 @@
+/* Basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+ /* Container for the entire game */
+.container {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* fixed width for each cell */
+    column-gap: 5px; /* Adjust this as needed */
+    row-gap: 5px; /* Adjust this as needed */
+    width: calc(3 * 100px + 2 * 5px); /* Total width */
+    margin: 20px auto; /* Center the board */
+}
+
+.cell {
+    height: 100px; /* Fixed height */
+    width: 100px; /* Fixed width */
+    border: 2px solid #333;
+    position: relative;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.playerX {
+    color: red; /* or any color you prefer */
+}
+
+.playerO {
+    color: blue; /* or any color you prefer */
+}
+
+
+#reset {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+#reset:hover {
+    background-color: #45a049;
+}
+
+#gameStatus {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+@media screen and (max-width: 600px) {
+
+    .container{
+        width: 100%;
+    }
+
+}
